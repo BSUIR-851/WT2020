@@ -13,6 +13,7 @@ public class PaymentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
 
+        req.setAttribute("name", "Payment service");
         req.getRequestDispatcher("mypage.jsp").forward(req, resp);
     }
 
