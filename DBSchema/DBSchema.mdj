@@ -1814,7 +1814,6 @@
 							"name": "role_id",
 							"type": "INTEGER",
 							"length": 0,
-							"primaryKey": true,
 							"foreignKey": true
 						},
 						{
