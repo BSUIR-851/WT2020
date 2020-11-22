@@ -1504,7 +1504,6 @@
 							"name": "user_id",
 							"type": "INTEGER",
 							"length": 0,
-							"primaryKey": true,
 							"foreignKey": true,
 							"unique": true
 						},
