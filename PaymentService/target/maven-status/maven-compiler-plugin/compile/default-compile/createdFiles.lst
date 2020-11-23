@@ -1,1 +1,10 @@
+com/devcolibri/servlet/PaymentSignupServlet.class
+com/devcolibri/servlet/objects/UserRole.class
+com/devcolibri/servlet/objects/User.class
+com/devcolibri/servlet/objects/Role.class
+com/devcolibri/servlet/database/RolesDao.class
+com/devcolibri/servlet/database/Database.class
 com/devcolibri/servlet/PaymentServlet.class
+com/devcolibri/servlet/database/UsersRolesDao.class
+com/devcolibri/servlet/database/UsersDao.class
+com/devcolibri/servlet/database/Dao.class
