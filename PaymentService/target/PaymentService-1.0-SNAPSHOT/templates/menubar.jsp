@@ -22,12 +22,19 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link smoothScroll">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a href="login.jsp" class="nav-link contact">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a href="${contextPath}/signup" class="nav-link contact">Sign Up</a>
-                </li>
+                <c:if test="${sessionScope.userId == null}">
+                    <li class="nav-item">
+                        <a href="${contextPath}/login" class="nav-link contact">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="${contextPath}/signup" class="nav-link contact">Sign Up</a>
+                    </li>
+                </c:if>
+                <c:if test="${sessionScope.userId != null}">
+                    <li class="nav-item">
+                        <a href="${contextPath}/logout" class="nav-link contact">Log Out</a>
+                    </li>
+                </c:if>
             </ul>
         </div>
     </div>

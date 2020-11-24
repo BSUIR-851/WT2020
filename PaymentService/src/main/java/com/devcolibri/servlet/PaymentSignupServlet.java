@@ -2,6 +2,7 @@ package com.devcolibri.servlet;
 
 import com.devcolibri.servlet.database.UsersDao;
 import com.devcolibri.servlet.database.UsersRolesDao;
+import com.devcolibri.servlet.model.Utils;
 import com.devcolibri.servlet.objects.User;
 import com.devcolibri.servlet.objects.UserRole;
 
@@ -12,9 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.ArrayList;
 
 @WebServlet(
         urlPatterns = {
@@ -33,32 +31,29 @@ public class PaymentSignupServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        PrintWriter pw = resp.getWriter();
 
-        try {
-            String username = req.getParameter("username");
-            String email = req.getParameter("email");
-            String passHash = req.getParameter("pass");
-            String firstName = req.getParameter("first-name");
-            String lastName = req.getParameter("last-name");
-            User user = new User(username, email, passHash, firstName, lastName);
+        String username = req.getParameter("username");
+        String email = req.getParameter("email");
+        String pass = req.getParameter("pass");
 
-            UsersDao usersDao = new UsersDao();
-            int userId = usersDao.insert(user);
+        String passHash = Utils.passHash(pass);
 
-            UsersRolesDao usersRolesDao = new UsersRolesDao();
-            UserRole userRole = new UserRole(userId, UsersRolesDao.USER_ID);
-            int userRoleId = usersRolesDao.insert(userRole);
+        String firstName = req.getParameter("first-name");
+        String lastName = req.getParameter("last-name");
+        User user = new User(username, email, passHash, firstName, lastName);
 
-            req.setAttribute("regRes", userId & userRoleId);
-            req.getRequestDispatcher("signup.jsp").forward(req, resp);
+        UsersDao usersDao = new UsersDao();
+        int userId = usersDao.insert(user);
 
-        } catch(Exception ex) {
-            pw.println("Connection to BD failed..");
-            pw.println(ex);
+        UsersRolesDao usersRolesDao = new UsersRolesDao();
+        UserRole userRole = new UserRole(userId, UsersRolesDao.USER_ID);
+        int userRoleId = usersRolesDao.insert(userRole);
 
-        } finally {
-            pw.close();
+        int regRes = userId & userRoleId;
+        if (regRes == 0) {
+            req.setAttribute("errmsg", "Please, fill your data correctly (user with this username or email is exists)");
         }
+        req.setAttribute("regRes", regRes);
+        req.getRequestDispatcher("signup.jsp").forward(req, resp);
     }
 }
