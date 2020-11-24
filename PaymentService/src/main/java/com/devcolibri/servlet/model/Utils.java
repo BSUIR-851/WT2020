@@ -5,7 +5,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Utils {
-    private static final String USAGE_ALGORITHM = "SHA-256";
+    public static final String USAGE_ALGORITHM = "SHA-256";
+    public static final int BANK_CODE = 851003;
 
     public static String passHash(String pass) {
         String hashString = "";
@@ -18,5 +19,9 @@ public class Utils {
             e.printStackTrace();
         }
         return hashString;
+    }
+
+    public static int generateBankAccountNumber(int userId) {
+        return Integer.parseInt(Integer.toString(BANK_CODE) + Integer.toString(userId));
     }
 }

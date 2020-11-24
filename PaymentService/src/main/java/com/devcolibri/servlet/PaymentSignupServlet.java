@@ -1,8 +1,10 @@
 package com.devcolibri.servlet;
 
+import com.devcolibri.servlet.database.BankAccountsDao;
 import com.devcolibri.servlet.database.UsersDao;
 import com.devcolibri.servlet.database.UsersRolesDao;
 import com.devcolibri.servlet.model.Utils;
+import com.devcolibri.servlet.objects.BankAccount;
 import com.devcolibri.servlet.objects.User;
 import com.devcolibri.servlet.objects.UserRole;
 
@@ -32,26 +34,28 @@ public class PaymentSignupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
+        UsersDao usersDao = new UsersDao();
         String username = req.getParameter("username");
         String email = req.getParameter("email");
         String pass = req.getParameter("pass");
-
         String passHash = Utils.passHash(pass);
-
         String firstName = req.getParameter("first-name");
         String lastName = req.getParameter("last-name");
         User user = new User(username, email, passHash, firstName, lastName);
-
-        UsersDao usersDao = new UsersDao();
         int userId = usersDao.insert(user);
 
         UsersRolesDao usersRolesDao = new UsersRolesDao();
         UserRole userRole = new UserRole(userId, UsersRolesDao.USER_ID);
         int userRoleId = usersRolesDao.insert(userRole);
 
+
         int regRes = userId & userRoleId;
         if (regRes == 0) {
             req.setAttribute("errmsg", "Please, fill your data correctly (user with this username or email is exists)");
+        } else {
+            BankAccountsDao bankAccountsDao = new BankAccountsDao();
+            BankAccount bankAccount = new BankAccount(userId, 0F, Utils.generateBankAccountNumber(userId));
+            int bankAccountId = bankAccountsDao.insert(bankAccount);
         }
         req.setAttribute("regRes", regRes);
         req.getRequestDispatcher("signup.jsp").forward(req, resp);
