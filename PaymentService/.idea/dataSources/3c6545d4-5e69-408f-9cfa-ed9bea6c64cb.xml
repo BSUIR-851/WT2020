@@ -895,162 +895,431 @@
     <user id="283" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="284" parent="4" name="roles"/>
-    <table id="285" parent="4" name="users"/>
-    <table id="286" parent="4" name="users_roles"/>
-    <column id="287" parent="284" name="id">
+    <table id="284" parent="4" name="bank_accounts"/>
+    <table id="285" parent="4" name="blocked_bank_accounts"/>
+    <table id="286" parent="4" name="cards"/>
+    <table id="287" parent="4" name="roles"/>
+    <table id="288" parent="4" name="transactions"/>
+    <table id="289" parent="4" name="users"/>
+    <table id="290" parent="4" name="users_roles"/>
+    <column id="291" parent="284" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="284" name="name">
+    <column id="292" parent="284" name="user_id">
       <Position>2</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="289" parent="284" name="privilege_level">
-      <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="290" parent="284" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="291" parent="284" name="name_UNIQUE">
-      <ColNames>name</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="292" parent="284" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="293" parent="284" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
-    </key>
-    <key id="294" parent="284" name="name_UNIQUE">
-      <ColNames>name</ColNames>
-      <UnderlyingIndexName>name_UNIQUE</UnderlyingIndexName>
-    </key>
-    <column id="295" parent="285" name="id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="296" parent="285" name="username">
-      <Position>2</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="297" parent="285" name="email">
+    <column id="293" parent="284" name="balance">
       <Position>3</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>decimal(15,2 digit)|0s</DataType>
+      <DefaultExpression>0.00</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="285" name="pass_hash">
+    <column id="294" parent="284" name="number">
       <Position>4</Position>
-      <DataType>varchar(256)|0s</DataType>
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="285" name="first_name">
-      <Position>5</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="300" parent="285" name="last_name">
-      <Position>6</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="301" parent="285" name="id_UNIQUE">
+    <index id="295" parent="284" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="302" parent="285" name="username_UNIQUE">
-      <ColNames>username</ColNames>
+    <index id="296" parent="284" name="user_id_UNIQUE">
+      <ColNames>user_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="303" parent="285" name="email_UNIQUE">
-      <ColNames>email</ColNames>
+    <index id="297" parent="284" name="number_UNIQUE">
+      <ColNames>number</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="304" parent="285" name="PRIMARY">
+    <key id="298" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="305" parent="285" name="id_UNIQUE">
+    <key id="299" parent="284" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="306" parent="285" name="username_UNIQUE">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
-    </key>
-    <key id="307" parent="285" name="email_UNIQUE">
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>email_UNIQUE</UnderlyingIndexName>
-    </key>
-    <column id="308" parent="286" name="id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="309" parent="286" name="user_id">
-      <Position>2</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="310" parent="286" name="role_id">
-      <Position>3</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>1</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="311" parent="286" name="user_id_idx">
+    <key id="300" parent="284" name="user_id_UNIQUE">
       <ColNames>user_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="312" parent="286" name="role_id_idx">
-      <ColNames>role_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="313" parent="286" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
+      <UnderlyingIndexName>user_id_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="314" parent="286" name="user_id">
+    <key id="301" parent="284" name="number_UNIQUE">
+      <ColNames>number</ColNames>
+      <UnderlyingIndexName>number_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="302" parent="284" name="bank_accounts_ibfk_1">
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="315" parent="286" name="role_id">
+    <column id="303" parent="285" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="304" parent="285" name="bank_account_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="305" parent="285" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="306" parent="285" name="bank_account_id_UNIQUE">
+      <ColNames>bank_account_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="307" parent="285" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="308" parent="285" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="309" parent="285" name="bank_account_id_UNIQUE">
+      <ColNames>bank_account_id</ColNames>
+      <UnderlyingIndexName>bank_account_id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="310" parent="285" name="bank_account_id">
+      <ColNames>bank_account_id</ColNames>
+      <RefTableName>bank_accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="311" parent="286" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="312" parent="286" name="user_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="313" parent="286" name="bank_account_id">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="314" parent="286" name="number">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="286" name="balance">
+      <Position>5</Position>
+      <DataType>decimal(15,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0.00</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="316" parent="286" name="pin_hash">
+      <Position>6</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="317" parent="286" name="CVV_hash">
+      <Position>7</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="318" parent="286" name="expire_date">
+      <Position>8</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="319" parent="286" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="320" parent="286" name="number_UNIQUE">
+      <ColNames>number</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="321" parent="286" name="cards_user_id_idx">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="322" parent="286" name="cards_bank_account_id_idx">
+      <ColNames>bank_account_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="323" parent="286" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="324" parent="286" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="325" parent="286" name="number_UNIQUE">
+      <ColNames>number</ColNames>
+      <UnderlyingIndexName>number_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="326" parent="286" name="cards_user_id">
+      <ColNames>user_id</ColNames>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="327" parent="286" name="cards_bank_account_id">
+      <ColNames>bank_account_id</ColNames>
+      <RefTableName>bank_accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="328" parent="287" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="329" parent="287" name="name">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="330" parent="287" name="privilege_level">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="331" parent="287" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="332" parent="287" name="name_UNIQUE">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="333" parent="287" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="334" parent="287" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="335" parent="287" name="name_UNIQUE">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="336" parent="288" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="337" parent="288" name="scard_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="338" parent="288" name="dcard_id">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="339" parent="288" name="amount">
+      <Position>4</Position>
+      <DataType>decimal(15,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="340" parent="288" name="datetime">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="341" parent="288" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="342" parent="288" name="scard_id_idx">
+      <ColNames>scard_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="343" parent="288" name="dcard_id_idx">
+      <ColNames>dcard_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="344" parent="288" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="345" parent="288" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="346" parent="288" name="scard_id">
+      <ColNames>scard_id</ColNames>
+      <RefTableName>cards</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="347" parent="288" name="dcard_id">
+      <ColNames>dcard_id</ColNames>
+      <RefTableName>cards</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="348" parent="289" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="349" parent="289" name="username">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="350" parent="289" name="email">
+      <Position>3</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="351" parent="289" name="pass_hash">
+      <Position>4</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="352" parent="289" name="first_name">
+      <Position>5</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="353" parent="289" name="last_name">
+      <Position>6</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="354" parent="289" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="355" parent="289" name="username_UNIQUE">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="356" parent="289" name="email_UNIQUE">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="357" parent="289" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="358" parent="289" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="359" parent="289" name="username_UNIQUE">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="360" parent="289" name="email_UNIQUE">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>email_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="361" parent="290" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="362" parent="290" name="user_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="363" parent="290" name="role_id">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="364" parent="290" name="user_id_idx">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="365" parent="290" name="role_id_idx">
+      <ColNames>role_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="366" parent="290" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="367" parent="290" name="user_id">
+      <ColNames>user_id</ColNames>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="368" parent="290" name="role_id">
       <ColNames>role_id</ColNames>
       <RefTableName>roles</RefTableName>
       <RefColNames>id</RefColNames>

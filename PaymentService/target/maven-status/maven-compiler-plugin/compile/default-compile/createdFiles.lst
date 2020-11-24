@@ -1,3 +1,6 @@
+com/devcolibri/servlet/database/BlockedBankAccountsDao.class
+com/devcolibri/servlet/objects/Card.class
+com/devcolibri/servlet/objects/BankAccount.class
 com/devcolibri/servlet/objects/User.class
 com/devcolibri/servlet/database/RolesDao.class
 com/devcolibri/servlet/database/UsersRolesDao.class
@@ -8,6 +11,9 @@ com/devcolibri/servlet/PaymentLogoutServlet.class
 com/devcolibri/servlet/model/Utils.class
 com/devcolibri/servlet/PaymentSignupServlet.class
 com/devcolibri/servlet/objects/UserRole.class
+com/devcolibri/servlet/database/CardsDao.class
 com/devcolibri/servlet/objects/Role.class
+com/devcolibri/servlet/objects/BlockedBankAccount.class
+com/devcolibri/servlet/database/BankAccountsDao.class
 com/devcolibri/servlet/database/Database.class
 com/devcolibri/servlet/PaymentServlet.class
