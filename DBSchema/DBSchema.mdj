@@ -1828,8 +1828,9 @@
 							"_parent": {
 								"$ref": "AAAAAAF1GBqLXpRSkm8="
 							},
-							"name": "CVV_hash",
-							"type": "VARCHAR"
+							"name": "cvv_hash",
+							"type": "VARCHAR",
+							"length": 0
 						},
 						{
 							"_type": "ERDColumn",
