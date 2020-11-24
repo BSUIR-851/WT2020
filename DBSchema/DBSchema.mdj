@@ -258,21 +258,6 @@
 										},
 										{
 											"_type": "ERDColumnView",
-											"_id": "AAAAAAF1GA9NXJQXV5c=",
-											"_parent": {
-												"$ref": "AAAAAAF1GAmp/pPRZ6Y="
-											},
-											"model": {
-												"$ref": "AAAAAAF1GA9NP5QUZMg="
-											},
-											"font": "Times New Roman;14;0",
-											"left": 69,
-											"top": 493,
-											"width": 198,
-											"height": 14
-										},
-										{
-											"_type": "ERDColumnView",
 											"_id": "AAAAAAF1GCAEB5RmXv0=",
 											"_parent": {
 												"$ref": "AAAAAAF1GAmp/pPRZ6Y="
@@ -282,7 +267,7 @@
 											},
 											"font": "Times New Roman;14;0",
 											"left": 69,
-											"top": 509,
+											"top": 493,
 											"width": 198,
 											"height": 14
 										}
@@ -291,14 +276,14 @@
 									"left": 64,
 									"top": 440,
 									"width": 208,
-									"height": 88
+									"height": 72
 								}
 							],
 							"font": "Times New Roman;14;0",
 							"left": 64,
 							"top": 416,
 							"width": 208,
-							"height": 113,
+							"height": 96,
 							"nameLabel": {
 								"$ref": "AAAAAAF1GAmp/ZPQkxo="
 							},
@@ -1307,7 +1292,7 @@
 									},
 									"font": "Times New Roman;14;1",
 									"left": 48,
-									"top": 597,
+									"top": 573,
 									"width": 230.3203125,
 									"height": 14,
 									"text": "BLOCKED_BANK_ACCOUNTS"
@@ -1333,7 +1318,7 @@
 											},
 											"font": "Times New Roman;14;0",
 											"left": 53,
-											"top": 621,
+											"top": 597,
 											"width": 220.3203125,
 											"height": 14
 										},
@@ -1348,21 +1333,21 @@
 											},
 											"font": "Times New Roman;14;0",
 											"left": 53,
-											"top": 637,
+											"top": 613,
 											"width": 220.3203125,
 											"height": 14
 										}
 									],
 									"font": "Times New Roman;14;0",
 									"left": 48,
-									"top": 616,
+									"top": 592,
 									"width": 230.3203125,
 									"height": 40
 								}
 							],
 							"font": "Times New Roman;14;0",
 							"left": 48,
-							"top": 592,
+							"top": 568,
 							"width": 230.3203125,
 							"height": 64,
 							"nameLabel": {
@@ -1391,7 +1376,7 @@
 									"visible": false,
 									"font": "Times New Roman;14;0",
 									"left": 179,
-									"top": 552,
+									"top": 531,
 									"height": 14,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1408,7 +1393,7 @@
 									},
 									"font": "Times New Roman;14;0",
 									"left": 180,
-									"top": 546,
+									"top": 529,
 									"height": 14,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -1425,7 +1410,7 @@
 									},
 									"font": "Times New Roman;14;0",
 									"left": 180,
-									"top": 559,
+									"top": 535,
 									"height": 14,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -1442,7 +1427,7 @@
 								"$ref": "AAAAAAF1GAmp/ZPPkWY="
 							},
 							"lineStyle": 2,
-							"points": "165:528;165:592",
+							"points": "165:511;165:568",
 							"nameLabel": {
 								"$ref": "AAAAAAF1+1C7oQFSWWk="
 							},
@@ -1721,16 +1706,6 @@
 							},
 							"name": "balance",
 							"type": "DECIMAL",
-							"length": 0
-						},
-						{
-							"_type": "ERDColumn",
-							"_id": "AAAAAAF1GA9NP5QUZMg=",
-							"_parent": {
-								"$ref": "AAAAAAF1GAmp/ZPN6PE="
-							},
-							"name": "status",
-							"type": "BOOLEAN",
 							"length": 0
 						},
 						{
