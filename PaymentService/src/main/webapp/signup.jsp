@@ -26,7 +26,7 @@
                                 <h1 class="mb-4">Hey there, let's <strong>create</strong> an <strong>account</strong></h1>
                             </c:if>
                             <c:if test="${errmsg != null}">
-                                <h5 class="mb-4 mx-auto">${errmsg}</h5>
+                                <h5 class="mb-4 mx-auto" data-aos="fade-up">${errmsg}</h5>
                             </c:if>
                         </div>
                         <div class="col-lg-8 mx-auto col-md-10 col-12">

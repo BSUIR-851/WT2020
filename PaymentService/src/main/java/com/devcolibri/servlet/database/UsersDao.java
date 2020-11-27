@@ -1,13 +1,20 @@
 package com.devcolibri.servlet.database;
 
 import com.devcolibri.servlet.objects.User;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class UsersDao implements Dao<User> {
 
+    private static final Logger log = Logger.getLogger(UsersDao.class);
+
     private Connection conn;
+
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
 
     public UsersDao() {
         this.conn = Database.getConnection();
@@ -31,7 +38,7 @@ public class UsersDao implements Dao<User> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (statement != null) {
                 try {
@@ -61,7 +68,7 @@ public class UsersDao implements Dao<User> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -91,7 +98,7 @@ public class UsersDao implements Dao<User> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -123,7 +130,7 @@ public class UsersDao implements Dao<User> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -155,7 +162,7 @@ public class UsersDao implements Dao<User> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -178,7 +185,7 @@ public class UsersDao implements Dao<User> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -201,7 +208,7 @@ public class UsersDao implements Dao<User> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {

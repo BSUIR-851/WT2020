@@ -30,7 +30,7 @@ public class PaymentLoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String username = req.getParameter("username");
         String pass = req.getParameter("pass");
-        String passHash = Utils.passHash(pass);
+        String passHash = Utils.hashString(pass);
 
         UsersDao usersDao = new UsersDao();
         User user = usersDao.selectOneByUsername(username);

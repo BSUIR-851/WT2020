@@ -1,11 +1,14 @@
 package com.devcolibri.servlet.database;
 
 import com.devcolibri.servlet.objects.BankAccount;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class BankAccountsDao implements Dao<BankAccount> {
+
+    private static final Logger log = Logger.getLogger(BankAccountsDao.class);
 
     private Connection conn;
 
@@ -29,7 +32,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (statement != null) {
                 try {
@@ -57,7 +60,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -85,7 +88,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -113,7 +116,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -143,7 +146,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -173,7 +176,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -196,7 +199,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -219,7 +222,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -242,7 +245,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {

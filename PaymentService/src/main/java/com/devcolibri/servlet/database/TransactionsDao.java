@@ -1,11 +1,14 @@
 package com.devcolibri.servlet.database;
 
 import com.devcolibri.servlet.objects.Transaction;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class TransactionsDao implements Dao<Transaction> {
+
+    private static final Logger log = Logger.getLogger(TransactionsDao.class);
 
     private Connection conn;
 
@@ -30,7 +33,7 @@ public class TransactionsDao implements Dao<Transaction> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (statement != null) {
                 try {
@@ -59,7 +62,7 @@ public class TransactionsDao implements Dao<Transaction> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -90,7 +93,7 @@ public class TransactionsDao implements Dao<Transaction> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -121,7 +124,7 @@ public class TransactionsDao implements Dao<Transaction> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -144,7 +147,7 @@ public class TransactionsDao implements Dao<Transaction> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {

@@ -1,6 +1,7 @@
 package com.devcolibri.servlet.database;
 
 import com.devcolibri.servlet.objects.Role;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +10,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class RolesDao implements Dao<Role> {
+
+    private static final Logger log = Logger.getLogger(RolesDao.class);
 
     private Connection conn;
 
@@ -31,7 +34,7 @@ public class RolesDao implements Dao<Role> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (statement != null) {
                 try {
@@ -58,7 +61,7 @@ public class RolesDao implements Dao<Role> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -85,7 +88,7 @@ public class RolesDao implements Dao<Role> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -114,7 +117,7 @@ public class RolesDao implements Dao<Role> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -143,7 +146,7 @@ public class RolesDao implements Dao<Role> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -166,7 +169,7 @@ public class RolesDao implements Dao<Role> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -189,7 +192,7 @@ public class RolesDao implements Dao<Role> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {

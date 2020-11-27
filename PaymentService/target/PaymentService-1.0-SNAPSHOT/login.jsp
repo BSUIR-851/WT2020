@@ -21,8 +21,11 @@
         <div class="row">
             <c:if test="${sessionScope.userId == null}">
                 <div class="col-lg-8 mx-auto col-md-10 col-12 text-center">
+                    <div class="col-lg-6 mx-auto col-md-7 col-12 pt-0 mt-0 text-center" data-aos="fade-up">
+                        <h3 class="mb-4">Type your <strong>username</strong> and <strong>password</strong> to <strong>Log In</strong>:</h3>
+                    </div>
                     <c:if test="${errmsg != null}">
-                        <h5 class="mb-4 mx-auto">${errmsg}</h5>
+                        <h5 class="mb-4 mx-auto" data-aos="fade-up">${errmsg}</h5>
                     </c:if>
                     <form action="login" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="100" role="form">
                         <div class="col-lg-6 col-12 mx-auto">

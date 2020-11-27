@@ -1,13 +1,20 @@
 package com.devcolibri.servlet.database;
 
 import com.devcolibri.servlet.objects.BlockedBankAccount;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
 
+    private static final Logger log = Logger.getLogger(BlockedBankAccountsDao.class);
+
     private Connection conn;
+
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
 
     public BlockedBankAccountsDao() {
         this.conn = Database.getConnection();
@@ -27,7 +34,7 @@ public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (statement != null) {
                 try {
@@ -53,7 +60,7 @@ public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -79,7 +86,7 @@ public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -107,7 +114,7 @@ public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -135,7 +142,7 @@ public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
             }
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -158,7 +165,7 @@ public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {
@@ -181,7 +188,7 @@ public class BlockedBankAccountsDao implements Dao<BlockedBankAccount> {
             res = preparedStatement.executeUpdate();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            this.log.error(ex);
         } finally {
             if (preparedStatement != null) {
                 try {

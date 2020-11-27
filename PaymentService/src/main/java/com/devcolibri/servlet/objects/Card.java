@@ -6,7 +6,7 @@ public class Card {
     private int id;
     private int userId;
     private int bankAccountId;
-    private int number;
+    private String number;
     private float balance;
     private String pinHash;
     private String cvvHash;
@@ -36,11 +36,11 @@ public class Card {
         this.bankAccountId = bankAccountId;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return this.number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -76,7 +76,7 @@ public class Card {
         this.expireDate = expireDate;
     }
 
-    public Card (int userId, int bankAccountId, int number, float balance, String pinHash, String cvvHash, Date expireDate) {
+    public Card (int userId, int bankAccountId, String number, float balance, String pinHash, String cvvHash, Date expireDate) {
         this.userId = userId;
         this.bankAccountId = bankAccountId;
         this.number = number;
@@ -86,7 +86,7 @@ public class Card {
         this.expireDate = expireDate;
     }
 
-    public Card (int id, int userId, int bankAccountId, int number, float balance, String pinHash, String cvvHash, Date expireDate) {
+    public Card (int id, int userId, int bankAccountId, String number, float balance, String pinHash, String cvvHash, Date expireDate) {
         this.id = id;
         this.userId = userId;
         this.bankAccountId = bankAccountId;

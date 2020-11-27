@@ -38,7 +38,7 @@ public class PaymentSignupServlet extends HttpServlet {
         String username = req.getParameter("username");
         String email = req.getParameter("email");
         String pass = req.getParameter("pass");
-        String passHash = Utils.passHash(pass);
+        String passHash = Utils.hashString(pass);
         String firstName = req.getParameter("first-name");
         String lastName = req.getParameter("last-name");
         User user = new User(username, email, passHash, firstName, lastName);
