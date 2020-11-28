@@ -17,6 +17,13 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/css/owl.carousel.min.css"/>
     <link rel="stylesheet" type="text/css" href="${contextPath}/css/owl.theme.default.min.css"/>
 
+    <link rel="stylesheet" type="text/css" href="${contextPath}/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/css/util.css"/>
+
+    <link rel="stylesheet" type="text/css" href="${contextPath}/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/vendor/perfect-scrollbar/perfect-scrollbar.css">
+
     <!-- MAIN CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/css/templatemo-digital-trend.css"/>
 

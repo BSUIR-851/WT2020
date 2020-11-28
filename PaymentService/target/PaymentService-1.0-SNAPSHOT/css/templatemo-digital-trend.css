@@ -30,6 +30,16 @@ https://templatemo.com/tm-538-digital-trend
       font-style: normal;
   }
 
+  @font-face {
+    font-family: Lato-Regular;
+    src: url('../fonts/Lato/Lato-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: Lato-Bold;
+    src: url('../fonts/Lato/Lato-Bold.ttf');
+  }
+
   :root {
     --primary-color:        #057a8d;
     --secondary-color:      #f1c111;
@@ -151,15 +161,37 @@ https://templatemo.com/tm-538-digital-trend
     white-space: nowrap;
   }
 
-  .custom-btn.btn-bg {
+  .custom-btn-small {
+    background: transparent;
+    border: 1px solid var(--gray-color);
+    border-radius: var(--border-radius-large);
+    padding: 6px 13px 7px 13px;
+    color: var(--dark-color);
+    font-family: Lato-Regular;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .custom-btn.btn-bg,
+  .custom-btn-small.btn-bg {
     background: var(--white-color);
     color: var(--primary-color);
     border-color: transparent;
 	transition: all .3s ease;
   }
+
+  .custom-btn.btn-bg-bordered,
+  .custom-btn-small.btn-bg-bordered {
+    background: var(--white-color);
+    color: var(--primary-color);
+    transition: all .3s ease;
+    border: 1px solid var(--dark-color);
+  }
   
   .custom-btn:hover,
-  .custom-btn:focus {
+  .custom-btn:focus,
+  .custom-btn-small:hover,
+  .custom-btn-small:focus {
     background: var(--dark-color);
     color: var(--white-color);
     border-color: transparent;
