@@ -1,7 +1,13 @@
 package com.devcolibri.servlet;
 
+import com.devcolibri.servlet.database.BankAccountsDao;
+import com.devcolibri.servlet.database.BlockedBankAccountsDao;
 import com.devcolibri.servlet.database.CardsDao;
+import com.devcolibri.servlet.database.UsersDao;
+import com.devcolibri.servlet.objects.BankAccount;
+import com.devcolibri.servlet.objects.BlockedBankAccount;
 import com.devcolibri.servlet.objects.Card;
+import com.devcolibri.servlet.objects.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,6 +36,22 @@ public class PaymentServlet extends HttpServlet {
                 CardsDao cardsDao = new CardsDao();
                 ArrayList<Card> cards = cardsDao.selectAllByUserId(userId);
                 req.setAttribute("cards", cards);
+
+                UsersDao usersDao = new UsersDao();
+                User user = usersDao.selectOneById(userId);
+                req.setAttribute("user", user);
+
+                BankAccountsDao bankAccountsDao = new BankAccountsDao();
+                BankAccount bankAccount = bankAccountsDao.selectOneByUserId(userId);
+                req.setAttribute("bankAccount", bankAccount);
+
+                BlockedBankAccountsDao blockedBankAccountsDao = new BlockedBankAccountsDao();
+                BlockedBankAccount blockedBankAccount = blockedBankAccountsDao.selectOneByBankAccountId(bankAccount.getId());
+                boolean isBlocked = false;
+                if (blockedBankAccount != null) {
+                    isBlocked = !isBlocked;
+                }
+                req.setAttribute("isBlocked", isBlocked);
             }
         }
         req.getRequestDispatcher("index.jsp").forward(req, resp);

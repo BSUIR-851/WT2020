@@ -48,13 +48,13 @@ public class PaymentSignupServlet extends HttpServlet {
         UserRole userRole = new UserRole(userId, UsersRolesDao.USER_ID);
         int userRoleId = usersRolesDao.insert(userRole);
 
-
-        int regRes = userId & userRoleId;
+        int regRes = userId + userRoleId;
         if (regRes == 0) {
             req.setAttribute("errmsg", "Please, fill your data correctly (user with this username or email is exists)");
         } else {
             BankAccountsDao bankAccountsDao = new BankAccountsDao();
-            BankAccount bankAccount = new BankAccount(userId, 0F, Utils.generateBankAccountNumber(userId));
+            String bankAccountNumber = Utils.generateBankAccountNumber(userId);
+            BankAccount bankAccount = new BankAccount(userId, 0F, bankAccountNumber);
             int bankAccountId = bankAccountsDao.insert(bankAccount);
         }
         req.setAttribute("regRes", regRes);

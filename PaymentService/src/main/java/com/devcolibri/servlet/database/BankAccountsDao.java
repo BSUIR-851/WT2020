@@ -26,7 +26,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
                 int id = resultSet.getInt("id");
                 int userId = resultSet.getInt("user_id");
                 float balance = resultSet.getFloat("balance");
-                int number = resultSet.getInt("number");
+                String number = resultSet.getString("number");
                 BankAccount bankAccount = new BankAccount(id, userId, balance, number);
                 bankAccounts.add(bankAccount);
             }
@@ -55,7 +55,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             if (resultSet.next()) {
                 int userId = resultSet.getInt("user_id");
                 float balance = resultSet.getFloat("balance");
-                int number = resultSet.getInt("number");
+                String number = resultSet.getString("number");
                 bankAccount = new BankAccount(id, userId, balance, number);
             }
 
@@ -83,7 +83,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             if (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 float balance = resultSet.getFloat("balance");
-                int number = resultSet.getInt("number");
+                String number = resultSet.getString("number");
                 bankAccount = new BankAccount(id, userId, balance, number);
             }
 
@@ -100,13 +100,13 @@ public class BankAccountsDao implements Dao<BankAccount> {
         return bankAccount;
     }
 
-    public BankAccount selectOneByNumber(int number) {
+    public BankAccount selectOneByNumber(String number) {
         BankAccount bankAccount = null;
         PreparedStatement preparedStatement = null;
         try {
             String sql = "SELECT * FROM bank_accounts WHERE number = ?";
             preparedStatement = this.conn.prepareStatement(sql);
-            preparedStatement.setInt(1, number);
+            preparedStatement.setString(1, number);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -136,7 +136,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             preparedStatement = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, bankAccount.getUserId());
             preparedStatement.setFloat(2, bankAccount.getBalance());
-            preparedStatement.setInt(3, bankAccount.getNumber());
+            preparedStatement.setString(3, bankAccount.getNumber());
 
             preparedStatement.execute();
 
@@ -166,7 +166,7 @@ public class BankAccountsDao implements Dao<BankAccount> {
             preparedStatement = this.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, bankAccount.getUserId());
             preparedStatement.setFloat(2, bankAccount.getBalance());
-            preparedStatement.setInt(3, bankAccount.getNumber());
+            preparedStatement.setString(3, bankAccount.getNumber());
             preparedStatement.setInt(4, bankAccount.getId());
             preparedStatement.executeUpdate();
 
@@ -234,13 +234,13 @@ public class BankAccountsDao implements Dao<BankAccount> {
         return res;
     }
 
-    public int deleteByNumber(int number) {
+    public int deleteByNumber(String number) {
         PreparedStatement preparedStatement = null;
         int res = 0;
         try {
             String sql = "DELETE FROM bank_accounts WHERE number = ?";
             preparedStatement = this.conn.prepareStatement(sql);
-            preparedStatement.setInt(1, number);
+            preparedStatement.setString(1, number);
 
             res = preparedStatement.executeUpdate();
 

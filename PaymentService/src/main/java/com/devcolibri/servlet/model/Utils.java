@@ -27,8 +27,10 @@ public class Utils {
         return hashString;
     }
 
-    public static int generateBankAccountNumber(int userId) {
-        return Integer.parseInt(Integer.toString(BANK_CODE) + Integer.toString(userId));
+    public static String generateBankAccountNumber(int userId) {
+        String BAN = "";
+        BAN += String.valueOf(BANK_CODE) + ":" + String.valueOf(userId);
+        return BAN;
     }
 
     public static boolean checkEmailPattern(String email) {
@@ -51,7 +53,7 @@ public class Utils {
 
     public static String generateCardNumber(int userId, int bankAccountId, int num) {
         String cardNum = "";
-        cardNum += String.valueOf(userId) + String.valueOf(bankAccountId) + String.valueOf(num);
+        cardNum += String.valueOf(userId) + ":" + String.valueOf(bankAccountId) + ":" + String.valueOf(num);
         return cardNum;
     }
 

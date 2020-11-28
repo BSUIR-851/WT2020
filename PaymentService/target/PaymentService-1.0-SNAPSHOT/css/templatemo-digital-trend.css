@@ -164,11 +164,12 @@ https://templatemo.com/tm-538-digital-trend
   .custom-btn-small {
     background: transparent;
     border: 1px solid var(--gray-color);
-    border-radius: var(--border-radius-large);
+    border-radius: var(--border-radius-small);
     padding: 6px 13px 7px 13px;
+    margin-left: 0;
     color: var(--dark-color);
     font-family: Lato-Regular;
-    font-size: 15px;
+    font-size: 12px;
     white-space: nowrap;
   }
 

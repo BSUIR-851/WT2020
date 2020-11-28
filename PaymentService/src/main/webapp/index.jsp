@@ -18,8 +18,8 @@
 
     <!-- HERO -->
     <section class="hero hero-bg d-flex justify-content-center align-items-center pt-5">
-        <div class="container">
-            <c:if test="${sessionScope.userId == null}">
+        <c:if test="${sessionScope.userId == null}">
+            <div class="container-fluid ml-5">
                 <div class="row">
                     <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
                         <div class="hero-text">
@@ -33,11 +33,13 @@
                         </div>
                     </div>
                 </div>
-            </c:if>
-            <c:if test="${sessionScope.userId != null}">
-                <div class="row">
+            </div>
+        </c:if>
+        <c:if test="${sessionScope.userId != null}">
+            <div class="container-fluid ml-5">
+                <div class="row align-items-start">
                     <c:if test="${cards.size() != 0}">
-                        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
+                        <div class="col-lg-9 d-flex flex-column justify-content-center align-items-center">
                             <div class="hero-text w-100">
                                 <h1 class="text-white pt-0 mt-0" data-aos="fade-up">Your cards:</h1>
                                 <div class="table100 ver2 m-b-10" data-aos="fade-up">
@@ -48,9 +50,9 @@
                                                     <th class="cell100 column1">№</th>
                                                     <th class="cell100 column2">Number</th>
                                                     <th class="cell100 column3">Balance</th>
-                                                    <th class="cell100 column4">Status</th>
-                                                    <th class="cell100 column5">Expire date</th>
-                                                    <th class="cell100 column6">Block card</th>
+                                                    <th class="cell100 column4">Expire date</th>
+                                                    <th class="cell100 column5">Add funds</th>
+                                                    <th class="cell100 column6">Delete</th>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -65,10 +67,12 @@
                                                     <th class="cell100 column1">${num}</th>
                                                     <td class="cell100 column2">${card.getNumber()}</td>
                                                     <td class="cell100 column3">${card.getBalance()}</td>
-                                                    <td class="cell100 column4">Valid</td>
-                                                    <td class="cell100 column5">${card.getExpireDate()}</td>
+                                                    <td class="cell100 column4">${card.getExpireDate()}</td>
+                                                    <td class="cell100 column5">
+                                                        <a href="${contextPath}/addfundscard?cardId=${card.getId()}" class="custom-btn-small btn-bg-bordered btn mt-1">Add funds</a>
+                                                    </td>
                                                     <td class="cell100 column6">
-                                                        <a href="${contextPath}/blockcard?cardid=${card.getId()}" class="custom-btn-small btn-bg-bordered btn-sm">Block card</a>
+                                                        <a href="${contextPath}/deletecard?cardId=${card.getId()}" class="custom-btn-small btn-bg-bordered btn mt-1">&#10060;</a>
                                                     </td>
                                                 </tr>
                                                 <c:set var="num" value="${num + 1}"/>
@@ -82,21 +86,27 @@
                         </div>
                     </c:if>
                     <c:if test="${cards.size() == 0}">
-                        <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
+                        <div class="col-lg-4 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
                             <div class="hero-text">
                                 <h1 class="text-white" data-aos="fade-up">You <strong>don't</strong> have any cards.</h1>
                                 <a href="${contextPath}/createcard" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Create card</a>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12">
+                        <div class="col-lg-5 col-12">
                             <div class="hero-image" data-aos="fade-up" data-aos-delay="300">
                                 <img src="images/bw-creditcard.png" class="img-fluid" alt="creditcard">
                             </div>
                         </div>
                     </c:if>
+                    <c:import url="templates/userinfo.jsp">
+                        <c:param name="user" value="${user}"/>
+                        <c:param name="cards" value="${cards}"/>
+                        <c:param name="bankAccount" value="${bankAccount}"/>
+                        <c:param name="isBlockedBankAccount" value="${isBlocked}"/>
+                    </c:import>
                 </div>
-            </c:if>
-        </div>
+            </div>
+        </c:if>
     </section>
 
 

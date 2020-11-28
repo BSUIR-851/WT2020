@@ -4,7 +4,7 @@ public class BankAccount {
     private int id;
     private int userId;
     private float balance;
-    private int number;
+    private String number;
 
     public int getId() {
         return this.id;
@@ -30,21 +30,21 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return this.number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public BankAccount (int userId, float balance, int number) {
+    public BankAccount (int userId, float balance, String number) {
         this.userId = userId;
         this.balance = balance;
         this.number = number;
     }
 
-    public BankAccount (int id, int userId, float balance, int number) {
+    public BankAccount (int id, int userId, float balance, String number) {
         this.id = id;
         this.userId = userId;
         this.balance = balance;
