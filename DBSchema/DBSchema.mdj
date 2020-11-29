@@ -197,7 +197,7 @@
 									"font": "Times New Roman;14;1",
 									"left": 64,
 									"top": 421,
-									"width": 208,
+									"width": 210.5712890625,
 									"height": 14,
 									"text": "BANK_ACCOUNTS"
 								},
@@ -223,7 +223,7 @@
 											"font": "Times New Roman;14;0",
 											"left": 69,
 											"top": 445,
-											"width": 198,
+											"width": 200.5712890625,
 											"height": 14
 										},
 										{
@@ -238,7 +238,7 @@
 											"font": "Times New Roman;14;0",
 											"left": 69,
 											"top": 461,
-											"width": 198,
+											"width": 200.5712890625,
 											"height": 14
 										},
 										{
@@ -253,7 +253,7 @@
 											"font": "Times New Roman;14;0",
 											"left": 69,
 											"top": 477,
-											"width": 198,
+											"width": 200.5712890625,
 											"height": 14
 										},
 										{
@@ -268,21 +268,21 @@
 											"font": "Times New Roman;14;0",
 											"left": 69,
 											"top": 493,
-											"width": 198,
+											"width": 200.5712890625,
 											"height": 14
 										}
 									],
 									"font": "Times New Roman;14;0",
 									"left": 64,
 									"top": 440,
-									"width": 208,
+									"width": 210.5712890625,
 									"height": 72
 								}
 							],
 							"font": "Times New Roman;14;0",
 							"left": 64,
 							"top": 416,
-							"width": 208,
+							"width": 210.5712890625,
 							"height": 96,
 							"nameLabel": {
 								"$ref": "AAAAAAF1GAmp/ZPQkxo="
@@ -482,7 +482,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 331,
+									"left": 333,
 									"top": 450,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -499,7 +499,7 @@
 										"$ref": "AAAAAAF1GCY6SJSYAT0="
 									},
 									"font": "Times New Roman;14;0",
-									"left": 296,
+									"left": 299,
 									"top": 449,
 									"height": 14,
 									"alpha": 0.5235987755982988,
@@ -534,7 +534,7 @@
 								"$ref": "AAAAAAF1GAmp/ZPPkWY="
 							},
 							"lineStyle": 2,
-							"points": "271:471;392:471",
+							"points": "274:471;392:471",
 							"nameLabel": {
 								"$ref": "AAAAAAF1GCY6SJSZHZM="
 							},
@@ -1437,6 +1437,170 @@
 							"headNameLabel": {
 								"$ref": "AAAAAAF1+1C7oQFUwsE="
 							}
+						},
+						{
+							"_type": "ERDEntityView",
+							"_id": "AAAAAAF2FXa3TsFKYQg=",
+							"_parent": {
+								"$ref": "AAAAAAF1F9gvVJN9qEc="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FXa3TcFIWWc="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF2FXa3TsFLOMw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FXa3TsFKYQg="
+									},
+									"font": "Times New Roman;14;1",
+									"left": 24,
+									"top": 693,
+									"width": 283.99609375,
+									"height": 14,
+									"text": "REQUESTS_FOR_UNBLOCK"
+								},
+								{
+									"_type": "ERDColumnCompartmentView",
+									"_id": "AAAAAAF2FXa3TsFM6Yw=",
+									"_parent": {
+										"$ref": "AAAAAAF2FXa3TsFKYQg="
+									},
+									"model": {
+										"$ref": "AAAAAAF2FXa3TcFIWWc="
+									},
+									"subViews": [
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAF2FXg+rcFfVW4=",
+											"_parent": {
+												"$ref": "AAAAAAF2FXa3TsFM6Yw="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FXg+gMFcFzg="
+											},
+											"font": "Times New Roman;14;0",
+											"left": 29,
+											"top": 717,
+											"width": 273.99609375,
+											"height": 14
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAF2FXh/oMFqtGs=",
+											"_parent": {
+												"$ref": "AAAAAAF2FXa3TsFM6Yw="
+											},
+											"model": {
+												"$ref": "AAAAAAF2FXh/f8FnjVs="
+											},
+											"font": "Times New Roman;14;0",
+											"left": 29,
+											"top": 733,
+											"width": 273.99609375,
+											"height": 14
+										}
+									],
+									"font": "Times New Roman;14;0",
+									"left": 24,
+									"top": 712,
+									"width": 283.99609375,
+									"height": 40
+								}
+							],
+							"font": "Times New Roman;14;0",
+							"left": 24,
+							"top": 688,
+							"width": 283.99609375,
+							"height": 64,
+							"nameLabel": {
+								"$ref": "AAAAAAF2FXa3TsFLOMw="
+							},
+							"columnCompartment": {
+								"$ref": "AAAAAAF2FXa3TsFM6Yw="
+							}
+						},
+						{
+							"_type": "ERDRelationshipView",
+							"_id": "AAAAAAF2FXn6WcF21Zs=",
+							"_parent": {
+								"$ref": "AAAAAAF1F9gvVJN9qEc="
+							},
+							"model": {
+								"$ref": "AAAAAAF2FXn6WMFy3V4="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAF2FXn6WcF3CDI=",
+									"_parent": {
+										"$ref": "AAAAAAF2FXn6WcF21Zs="
+									},
+									"visible": false,
+									"font": "Times New Roman;14;0",
+									"left": 175,
+									"top": 651,
+									"height": 14,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAF2FXn6WcF21Zs="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAF2FXn6WcF4zPc=",
+									"_parent": {
+										"$ref": "AAAAAAF2FXn6WcF21Zs="
+									},
+									"font": "Times New Roman;14;0",
+									"left": 176,
+									"top": 649,
+									"height": 14,
+									"alpha": 0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAF2FXn6WcF21Zs="
+									},
+									"edgePosition": 2
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAF2FXn6WcF5CgQ=",
+									"_parent": {
+										"$ref": "AAAAAAF2FXn6WcF21Zs="
+									},
+									"font": "Times New Roman;14;0",
+									"left": 176,
+									"top": 655,
+									"height": 14,
+									"alpha": -0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAF2FXn6WcF21Zs="
+									}
+								}
+							],
+							"font": "Times New Roman;14;0",
+							"head": {
+								"$ref": "AAAAAAF2FXa3TsFKYQg="
+							},
+							"tail": {
+								"$ref": "AAAAAAF1+07tGgEeK3M="
+							},
+							"lineStyle": 2,
+							"points": "161:631;161:688",
+							"nameLabel": {
+								"$ref": "AAAAAAF2FXn6WcF3CDI="
+							},
+							"tailNameLabel": {
+								"$ref": "AAAAAAF2FXn6WcF4zPc="
+							},
+							"headNameLabel": {
+								"$ref": "AAAAAAF2FXn6WcF5CgQ="
+							}
 						}
 					]
 				},
@@ -1715,7 +1879,8 @@
 								"$ref": "AAAAAAF1GAmp/ZPN6PE="
 							},
 							"name": "number",
-							"type": "INTEGER",
+							"type": "VARCHAR",
+							"length": "256",
 							"unique": true
 						}
 					]
@@ -2030,6 +2195,35 @@
 						"$ref": "AAAAAAF1F9gvVJN8LHk="
 					},
 					"name": "BLOCKED_BANK_ACCOUNTS",
+					"ownedElements": [
+						{
+							"_type": "ERDRelationship",
+							"_id": "AAAAAAF2FXn6WMFy3V4=",
+							"_parent": {
+								"$ref": "AAAAAAF1+07tGQEcYBY="
+							},
+							"end1": {
+								"_type": "ERDRelationshipEnd",
+								"_id": "AAAAAAF2FXn6WMFzdto=",
+								"_parent": {
+									"$ref": "AAAAAAF2FXn6WMFy3V4="
+								},
+								"reference": {
+									"$ref": "AAAAAAF1+07tGQEcYBY="
+								}
+							},
+							"end2": {
+								"_type": "ERDRelationshipEnd",
+								"_id": "AAAAAAF2FXn6WMF0FKI=",
+								"_parent": {
+									"$ref": "AAAAAAF2FXn6WMFy3V4="
+								},
+								"reference": {
+									"$ref": "AAAAAAF2FXa3TcFIWWc="
+								}
+							}
+						}
+					],
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -2050,6 +2244,40 @@
 								"$ref": "AAAAAAF1+07tGQEcYBY="
 							},
 							"name": "bank_account_id",
+							"type": "INTEGER",
+							"length": 0,
+							"foreignKey": true,
+							"unique": true
+						}
+					]
+				},
+				{
+					"_type": "ERDEntity",
+					"_id": "AAAAAAF2FXa3TcFIWWc=",
+					"_parent": {
+						"$ref": "AAAAAAF1F9gvVJN8LHk="
+					},
+					"name": "REQUESTS_FOR_UNBLOCK",
+					"columns": [
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAF2FXg+gMFcFzg=",
+							"_parent": {
+								"$ref": "AAAAAAF2FXa3TcFIWWc="
+							},
+							"name": "id",
+							"type": "INTEGER",
+							"length": 0,
+							"primaryKey": true,
+							"unique": true
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAF2FXh/f8FnjVs=",
+							"_parent": {
+								"$ref": "AAAAAAF2FXa3TcFIWWc="
+							},
+							"name": "blocked_bank_account_id",
 							"type": "INTEGER",
 							"length": 0,
 							"foreignKey": true,
