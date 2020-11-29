@@ -1,8 +1,8 @@
 package com.devcolibri.servlet;
 
-import com.devcolibri.servlet.database.BankAccountsDao;
-import com.devcolibri.servlet.database.CardsDao;
-import com.devcolibri.servlet.model.Utils;
+import com.devcolibri.servlet.database.DaoImpl.BankAccountsDao;
+import com.devcolibri.servlet.database.DaoImpl.CardsDao;
+import com.devcolibri.servlet.Utils.Utils;
 import com.devcolibri.servlet.objects.BankAccount;
 import com.devcolibri.servlet.objects.Card;
 
@@ -41,11 +41,8 @@ public class PaymentCreateCardServlet extends HttpServlet {
                 BankAccountsDao bankAccountsDao = new BankAccountsDao();
                 BankAccount bankAccount = bankAccountsDao.selectOneByUserId(userId);
 
-                CardsDao cardsDao = new CardsDao();
 
-                ArrayList<Card> cards = cardsDao.selectAllByUserId(userId);
-
-                String number = Utils.generateCardNumber(userId, bankAccount.getId(), cards.size() + 1);
+                String number = Utils.generateCardNumber(userId, bankAccount.getId());
 
                 String pin = Utils.generateRandomNumericString(4);
                 String pinHash = Utils.hashString(pin);
@@ -59,6 +56,7 @@ public class PaymentCreateCardServlet extends HttpServlet {
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
                 card = new Card(userId, bankAccount.getId(), number, 0f, pinHash, cvvHash, sqlDate);
+                CardsDao cardsDao = new CardsDao();
                 createRes = cardsDao.insert(card);
                 req.setAttribute("card", card);
             }

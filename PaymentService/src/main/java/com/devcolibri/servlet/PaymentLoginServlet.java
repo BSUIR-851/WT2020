@@ -1,7 +1,7 @@
 package com.devcolibri.servlet;
 
-import com.devcolibri.servlet.database.UsersDao;
-import com.devcolibri.servlet.model.Utils;
+import com.devcolibri.servlet.database.DaoImpl.UsersDao;
+import com.devcolibri.servlet.Utils.Utils;
 import com.devcolibri.servlet.objects.User;
 
 import javax.servlet.ServletException;

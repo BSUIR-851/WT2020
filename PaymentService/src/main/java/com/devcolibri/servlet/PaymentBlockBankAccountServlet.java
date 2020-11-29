@@ -1,11 +1,9 @@
 package com.devcolibri.servlet;
 
-import com.devcolibri.servlet.database.BankAccountsDao;
-import com.devcolibri.servlet.database.BlockedBankAccountsDao;
-import com.devcolibri.servlet.database.CardsDao;
+import com.devcolibri.servlet.database.DaoImpl.BankAccountsDao;
+import com.devcolibri.servlet.database.DaoImpl.BlockedBankAccountsDao;
 import com.devcolibri.servlet.objects.BankAccount;
 import com.devcolibri.servlet.objects.BlockedBankAccount;
-import com.devcolibri.servlet.objects.Card;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -26,7 +26,7 @@ public class BankAccount {
         return this.balance;
     }
 
-    public void setEmail(float balance) {
+    public void setBalance(float balance) {
         this.balance = balance;
     }
 

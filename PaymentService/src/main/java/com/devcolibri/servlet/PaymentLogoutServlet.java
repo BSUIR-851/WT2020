@@ -1,9 +1,5 @@
 package com.devcolibri.servlet;
 
-import com.devcolibri.servlet.database.UsersDao;
-import com.devcolibri.servlet.model.Utils;
-import com.devcolibri.servlet.objects.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -1,9 +1,9 @@
 package com.devcolibri.servlet;
 
-import com.devcolibri.servlet.database.BankAccountsDao;
-import com.devcolibri.servlet.database.UsersDao;
-import com.devcolibri.servlet.database.UsersRolesDao;
-import com.devcolibri.servlet.model.Utils;
+import com.devcolibri.servlet.database.DaoImpl.BankAccountsDao;
+import com.devcolibri.servlet.database.DaoImpl.UsersDao;
+import com.devcolibri.servlet.database.DaoImpl.UsersRolesDao;
+import com.devcolibri.servlet.Utils.Utils;
 import com.devcolibri.servlet.objects.BankAccount;
 import com.devcolibri.servlet.objects.User;
 import com.devcolibri.servlet.objects.UserRole;
@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(
         urlPatterns = {
@@ -48,7 +47,7 @@ public class PaymentSignupServlet extends HttpServlet {
         UserRole userRole = new UserRole(userId, UsersRolesDao.USER_ID);
         int userRoleId = usersRolesDao.insert(userRole);
 
-        int regRes = userId + userRoleId;
+        int regRes = userId * userRoleId;
         if (regRes == 0) {
             req.setAttribute("errmsg", "Please, fill your data correctly (user with this username or email is exists)");
         } else {

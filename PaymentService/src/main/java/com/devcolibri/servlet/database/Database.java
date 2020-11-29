@@ -25,4 +25,17 @@ public class Database {
         } catch (Exception ex) {
         }
     }
+
+    /*
+    public static Connection getConnection() {
+        return ConnectionPool.getInstance().getConnection();
+    }
+
+    public static void close(Connection conn) {
+        try {
+            conn.close();
+        } catch (Exception ex) {
+        }
+    }
+     */
 }
