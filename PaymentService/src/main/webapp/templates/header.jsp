@@ -20,9 +20,9 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="${contextPath}/css/util.css"/>
 
-    <link rel="stylesheet" type="text/css" href="${contextPath}/vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="${contextPath}/vendor/select2/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="${contextPath}/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/css/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/css/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/css/perfect-scrollbar/perfect-scrollbar.css">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/css/templatemo-digital-trend.css"/>
