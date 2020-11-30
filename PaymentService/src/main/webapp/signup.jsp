@@ -32,11 +32,11 @@
                         <div class="col-lg-8 mx-auto col-md-10 col-12">
                             <form action="signup" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="100" role="form">
                                 <div class="col-lg-6 col-12 mx-auto">
+                                    <input required type="text" class="form-control" name="username" placeholder="Username">
+                                    <input required type="email" class="form-control" name="email" placeholder="Email">
+                                    <input required type="password" class="form-control" name="pass" placeholder="Your password">
                                     <input required type="text" class="form-control" name="first-name" placeholder="First name">
                                     <input required type="text" class="form-control" name="last-name" placeholder="Last name">
-                                    <input required type="email" class="form-control" name="email" placeholder="Email">
-                                    <input required type="text" class="form-control" name="username" placeholder="Username">
-                                    <input required type="password" class="form-control" name="pass" placeholder="Your password">
                                 </div>
 
                                 <div class="col-lg-5 mx-auto col-7">

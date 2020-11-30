@@ -2,8 +2,10 @@ package com.devcolibri.servlet;
 
 import com.devcolibri.servlet.database.DaoImpl.BankAccountsDao;
 import com.devcolibri.servlet.database.DaoImpl.BlockedBankAccountsDao;
+import com.devcolibri.servlet.database.DaoImpl.RequestsForUnblockDao;
 import com.devcolibri.servlet.objects.BankAccount;
 import com.devcolibri.servlet.objects.BlockedBankAccount;
+import com.devcolibri.servlet.objects.RequestForUnblock;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,10 +17,10 @@ import java.io.IOException;
 
 @WebServlet(
         urlPatterns = {
-                "/blockbankaccount"
+                "/requestforunblock"
         }
 )
-public class PaymentBlockBankAccountServlet extends HttpServlet {
+public class PaymentMakeRequestForUnblockServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -36,17 +38,16 @@ public class PaymentBlockBankAccountServlet extends HttpServlet {
         if (isErr) {
             resp.sendRedirect(req.getContextPath());
         } else {
-            req.getRequestDispatcher("blockbankaccount.jsp").forward(req, resp);
+            req.getRequestDispatcher("requestforunblock.jsp").forward(req, resp);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        int blockRes = 0;
+        int unblockRes = 0;
         boolean isErr = false;
         String errmsg = null;
-
         HttpSession httpSession = req.getSession(false);
         if (httpSession == null) {
             isErr = true;
@@ -59,14 +60,23 @@ public class PaymentBlockBankAccountServlet extends HttpServlet {
                     int userId = (int) userIdObj;
                     BankAccountsDao bankAccountsDao = new BankAccountsDao();
                     BankAccount bankAccount = bankAccountsDao.selectOneByUserId(userId);
-
-                    BlockedBankAccountsDao blockedBankAccountsDao = new BlockedBankAccountsDao();
-                    BlockedBankAccount blockedBankAccount = new BlockedBankAccount(bankAccount.getId());
-                    blockRes = blockedBankAccountsDao.insert(blockedBankAccount);
-                    if (blockRes == 0) {
-                        errmsg = "This bank account is already blocked";
+                    if (bankAccount == null) {
+                        errmsg = "Something gone wrong!";
+                    } else {
+                        req.setAttribute("bankAccount", bankAccount);
+                        BlockedBankAccountsDao blockedBankAccountsDao = new BlockedBankAccountsDao();
+                        BlockedBankAccount blockedBankAccount = blockedBankAccountsDao.selectOneByBankAccountId(bankAccount.getId());
+                        if (blockedBankAccount == null) {
+                            errmsg = "This bank account is not blocked!";
+                        } else {
+                            RequestsForUnblockDao requestsForUnblockDao = new RequestsForUnblockDao();
+                            RequestForUnblock requestForUnblock = new RequestForUnblock(blockedBankAccount.getId());
+                            unblockRes = requestsForUnblockDao.insert(requestForUnblock);
+                            if (unblockRes == 0) {
+                                errmsg = "The request was already sent!";
+                            }
+                        }
                     }
-                    req.setAttribute("bankAccount", bankAccount);
                 } catch (Exception ex) {
                     isErr = true;
                 }
@@ -76,9 +86,9 @@ public class PaymentBlockBankAccountServlet extends HttpServlet {
         if (isErr) {
             resp.sendRedirect(req.getContextPath());
         } else {
-            req.setAttribute("blockRes", blockRes);
+            req.setAttribute("unblockRes", unblockRes);
             req.setAttribute("errmsg", errmsg);
-            req.getRequestDispatcher("blockbankaccount.jsp").forward(req, resp);
+            req.getRequestDispatcher("requestforunblock.jsp").forward(req, resp);
         }
     }
 }

@@ -22,12 +22,27 @@ public class PaymentLoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("login.jsp").forward(req, resp);
+        boolean isErr = false;
+        HttpSession httpSession = req.getSession(false);
+        if (httpSession != null) {
+            Object userIdObj = httpSession.getAttribute("userId");
+            if (userIdObj != null) {
+                isErr = true;
+            }
+        }
+
+        if (isErr) {
+            resp.sendRedirect(req.getContextPath());
+        } else {
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        String errmsg = null;
+
         String username = req.getParameter("username");
         String pass = req.getParameter("pass");
         String passHash = Utils.hashString(pass);
@@ -39,12 +54,13 @@ public class PaymentLoginServlet extends HttpServlet {
                 HttpSession httpSession = req.getSession();
                 httpSession.setAttribute("userId", user.getId());
             } else {
-                req.setAttribute("errmsg", "Password is incorrect!");
+                errmsg = "Password is incorrect!";
             }
         } else {
-            req.setAttribute("errmsg", "User '" + username + "' not found!");
+            errmsg = "User '" + username + "' not found!";
         }
 
+        req.setAttribute("errmsg", errmsg);
         req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 }

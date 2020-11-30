@@ -7,7 +7,7 @@
 <html lang="en">
 
 <c:import url="templates/header.jsp">
-    <c:param name="title" value="Create card | Pays"/>
+    <c:param name="title" value="Request for unblock bank account | Pays"/>
 </c:import>
 
 <body>
@@ -22,29 +22,28 @@
                 <c:redirect url="/"/>
             </c:if>
             <c:if test="${sessionScope.userId != null}">
-                <c:if test="${createRes == 0 || createRes == null}">
+                <c:if test="${unblockRes == 0 || unblockRes == null}">
                     <div class="col-lg-6 mx-auto col-md-7 col-12 pt-0 mt-0 text-center" data-aos="fade-up">
                         <c:if test="${errmsg == null}">
-                            <h1 class="mb-4">Let's <strong>create</strong> a <strong>card</strong></h1>
+                            <h1 class="mb-4">Do you really want to <strong>unblock</strong> a <strong>bank account</strong>?</h1>
                         </c:if>
                         <c:if test="${errmsg != null}">
                             <h5 class="mb-4 mx-auto" data-aos="fade-up">${errmsg}</h5>
                         </c:if>
                     </div>
                     <div class="col-lg-8 mx-auto col-md-10 col-12">
-                        <form action="createcard" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="100" role="form">
+                        <form action="requestforunblock" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="100" role="form">
                             <div class="col-lg-5 mx-auto col-7">
-                                <button type="submit" class="form-control" id="submit-button" name="submit">Create card</button>
+                                <button type="submit" class="form-control" id="submit-button" name="submit">Unblock bank account</button>
                             </div>
                         </form>
                     </div>
                 </c:if>
-                <c:if test="${createRes != 0 && card != null && pin != null && cvv != null}">
+                <c:if test="${unblockRes != 0 && bankAccount != null}">
                     <div class="col-lg-6 mx-auto col-md-7 col-12 pt-0 mt-0 text-center" data-aos="fade-up">
-                        <h1 class="mb-4">Creating card completed <strong>successfully</strong>!</h1>
-                        <h2>Make photo or write this secret data!</h2>
-                        <h4>PIN: <strong>${pin}</strong></h4>
-                        <h4 class="mb-4">CVV: <strong>${cvv}</strong></h4>
+                        <h1 class="mb-4">Request to unblock the bank account was sent <strong>successfully</strong>!</h1>
+                        <h3 class="mb-4">Wait until the administrator has unblocked your bank account.</h3>
+                        <h4 class="mb-4">Number: <strong>${bankAccount.getNumber()}</strong></h4>
                         <a href="${contextPath}" class="custom-btn">Back to main</a>
                     </div>
                 </c:if>

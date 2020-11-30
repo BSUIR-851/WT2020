@@ -15,7 +15,6 @@
 <!-- MENU BAR -->
 <c:import url="templates/menubar.jsp"/>
 
-<!-- REGISTRATION FORM -->
 <section class="contact section-padding-half">
     <div class="container">
         <div class="row">

@@ -51,7 +51,7 @@
         </div>
         <div class="col">
             <c:if test="${isBlocked}">
-                <a href="${contextPath}/unblockbankaccount" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Unblock</a>
+                <a href="${contextPath}/requestforunblock" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Unblock</a>
             </c:if>
             <c:if test="${!isBlocked}">
                 <a href="${contextPath}/blockbankaccount" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Block</a>

@@ -71,48 +71,52 @@ public class PaymentAddFundsCardServlet extends HttpServlet {
             if (userIdObj == null) {
                 isErr = true;
             } else {
-                int userId = (int) userIdObj;
+                try {
+                    int userId = (int) userIdObj;
 
-                String cardNumber = req.getParameter("card-number");
-                CardsDao cardsDao = new CardsDao();
-                Card card = cardsDao.selectOneByNumber(cardNumber);
+                    String cardNumber = req.getParameter("card-number");
+                    CardsDao cardsDao = new CardsDao();
+                    Card card = cardsDao.selectOneByNumber(cardNumber);
 
-                if (card == null) {
-                    errmsg = "Unknown card number!";
-                } else {
-                    req.setAttribute("card", card);
-                    if (card.getUserId() != userId) {
+                    if (card == null) {
                         errmsg = "Unknown card number!";
                     } else {
-                        String fundsAmountString = req.getParameter("funds-amount");
-                        try {
-                            BankAccountsDao bankAccountsDao = new BankAccountsDao();
-                            BankAccount bankAccount = bankAccountsDao.selectOneByUserId(userId);
-                            if (bankAccount == null) {
-                                errmsg = "Something gone wrong";
-                            } else {
-                                req.setAttribute("bankAccount", bankAccount);
-                                float fundsAmount = Float.parseFloat(fundsAmountString);
-                                if (fundsAmount < 0) {
-                                    errmsg = "Incorrect amount!";
+                        req.setAttribute("card", card);
+                        if (card.getUserId() != userId) {
+                            errmsg = "Unknown card number!";
+                        } else {
+                            String fundsAmountString = req.getParameter("funds-amount");
+                            try {
+                                BankAccountsDao bankAccountsDao = new BankAccountsDao();
+                                BankAccount bankAccount = bankAccountsDao.selectOneByUserId(userId);
+                                if (bankAccount == null) {
+                                    errmsg = "Something gone wrong";
                                 } else {
-                                    bankAccount.setBalance(bankAccount.getBalance() - fundsAmount);
-                                    int updateRes = bankAccountsDao.update(bankAccount);
-                                    if (updateRes == 0) {
-                                        errmsg = "Something gone wrong";
+                                    req.setAttribute("bankAccount", bankAccount);
+                                    float fundsAmount = Float.parseFloat(fundsAmountString);
+                                    if (fundsAmount < 0) {
+                                        errmsg = "Incorrect amount!";
                                     } else {
-                                        card.setBalance(card.getBalance() + fundsAmount);
-                                        addRes = cardsDao.update(card);
-                                        if (addRes == 0) {
-                                            errmsg = "Something gone wrong!";
+                                        bankAccount.setBalance(bankAccount.getBalance() - fundsAmount);
+                                        int updateRes = bankAccountsDao.update(bankAccount);
+                                        if (updateRes == 0) {
+                                            errmsg = "Something gone wrong";
+                                        } else {
+                                            card.setBalance(card.getBalance() + fundsAmount);
+                                            addRes = cardsDao.update(card);
+                                            if (addRes == 0) {
+                                                errmsg = "Something gone wrong!";
+                                            }
                                         }
                                     }
                                 }
+                            } catch (Exception ex) {
+                                errmsg = "Incorrect amount!";
                             }
-                        } catch (Exception ex) {
-                            errmsg = "Incorrect amount!";
                         }
                     }
+                } catch (Exception ex) {
+                    isErr = true;
                 }
             }
         }

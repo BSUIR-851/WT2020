@@ -25,64 +25,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc66d5e1-0cad-49b5-aa82-a337450ab101" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentAddFundsCardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentAddFundsCardServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentBlockBankAccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentBlockBankAccountServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentCreateCardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentCreateCardServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentDeleteCardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentDeleteCardServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentLoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentLogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentLogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentSignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentSignupServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/BankAccountsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/DaoImpl/BankAccountsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/BlockedBankAccountsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/DaoImpl/BlockedBankAccountsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/CardsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/DaoImpl/CardsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/RolesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/DaoImpl/RolesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/TransactionsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/DaoImpl/TransactionsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/DaoImpl/UsersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/UsersRolesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/database/DaoImpl/UsersRolesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/Utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/objects/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/objects/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentBlockBankAccountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentBlockBankAccountServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentCreateCardServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentCreateCardServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentLogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentLogoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentSignupServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/PaymentSignupServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/BankAccountsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/BlockedBankAccountsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/CardsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/RolesDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/TransactionsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/UsersDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/database/UsersRolesDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/objects/BankAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/com/devcolibri/servlet/objects/BankAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/PaymentService-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentBlockBankAccountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentBlockBankAccountServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentCreateCardServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentCreateCardServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentLogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentLogoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentSignupServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/PaymentSignupServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/BankAccountsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/BlockedBankAccountsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/CardsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/RolesDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/TransactionsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/UsersDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/database/UsersRolesDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/objects/BankAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/devcolibri/servlet/objects/BankAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/devcolibri/servlet/database/PaymentServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addfundscard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addfundscard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/blockbankaccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/blockbankaccount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createcard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createcard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/deletecard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/deletecard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/userinfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templates/userinfo.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -355,7 +311,8 @@
       <workItem from="1606474340256" duration="16212000" />
       <workItem from="1606561136158" duration="342000" />
       <workItem from="1606561789873" duration="20027000" />
-      <workItem from="1606649269037" duration="15598000" />
+      <workItem from="1606649269037" duration="16206000" />
+      <workItem from="1606748543482" duration="9597000" />
     </task>
     <servers />
   </component>
@@ -445,87 +402,87 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="513" height="466" key="DebuggerActiveHint/0.0.1680.1050@0.0.1680.1050" timestamp="1606657535895" />
-    <state width="1126" height="87" key="GridCell.Tab.0.bottom" timestamp="1606676973969">
+    <state width="1126" height="557" key="GridCell.Tab.0.bottom" timestamp="1606761505189">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973969" />
+    <state width="1126" height="557" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505189" />
     <state width="1126" height="162" key="GridCell.Tab.0.bottom/0.25.1680.950@0.25.1680.950" timestamp="1606658637633" />
     <state width="1638" height="147" key="GridCell.Tab.0.bottom/0.25.1680.952@0.25.1680.952" timestamp="1606416148250" />
     <state width="1638" height="364" key="GridCell.Tab.0.bottom/0.25.1680.954@0.25.1680.954" timestamp="1606410949264" />
-    <state width="1126" height="87" key="GridCell.Tab.0.center" timestamp="1606676973968">
+    <state width="1126" height="557" key="GridCell.Tab.0.center" timestamp="1606761505188">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973968" />
+    <state width="1126" height="557" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505188" />
     <state width="1126" height="162" key="GridCell.Tab.0.center/0.25.1680.950@0.25.1680.950" timestamp="1606658637632" />
     <state width="1638" height="147" key="GridCell.Tab.0.center/0.25.1680.952@0.25.1680.952" timestamp="1606416148249" />
     <state width="1638" height="364" key="GridCell.Tab.0.center/0.25.1680.954@0.25.1680.954" timestamp="1606410949263" />
-    <state width="1126" height="87" key="GridCell.Tab.0.left" timestamp="1606676973966">
+    <state width="1126" height="557" key="GridCell.Tab.0.left" timestamp="1606761505185">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973966" />
+    <state width="1126" height="557" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505185" />
     <state width="1126" height="162" key="GridCell.Tab.0.left/0.25.1680.950@0.25.1680.950" timestamp="1606658637631" />
     <state width="1638" height="147" key="GridCell.Tab.0.left/0.25.1680.952@0.25.1680.952" timestamp="1606416148248" />
     <state width="1638" height="364" key="GridCell.Tab.0.left/0.25.1680.954@0.25.1680.954" timestamp="1606410949263" />
-    <state width="1126" height="87" key="GridCell.Tab.0.right" timestamp="1606676973968">
+    <state width="1126" height="557" key="GridCell.Tab.0.right" timestamp="1606761505188">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973968" />
+    <state width="1126" height="557" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505188" />
     <state width="1126" height="162" key="GridCell.Tab.0.right/0.25.1680.950@0.25.1680.950" timestamp="1606658637633" />
     <state width="1638" height="147" key="GridCell.Tab.0.right/0.25.1680.952@0.25.1680.952" timestamp="1606416148249" />
     <state width="1638" height="364" key="GridCell.Tab.0.right/0.25.1680.954@0.25.1680.954" timestamp="1606410949264" />
-    <state width="1126" height="87" key="GridCell.Tab.1.bottom" timestamp="1606676973873">
+    <state width="1126" height="557" key="GridCell.Tab.1.bottom" timestamp="1606761505191">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973873" />
+    <state width="1126" height="557" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505191" />
     <state width="1126" height="162" key="GridCell.Tab.1.bottom/0.25.1680.950@0.25.1680.950" timestamp="1606658637635" />
     <state width="1126" height="162" key="GridCell.Tab.1.bottom/0.25.1680.952@0.25.1680.952" timestamp="1606592277150" />
     <state width="1638" height="364" key="GridCell.Tab.1.bottom/0.25.1680.954@0.25.1680.954" timestamp="1606410949266" />
-    <state width="1126" height="87" key="GridCell.Tab.1.center" timestamp="1606676973872">
+    <state width="1126" height="557" key="GridCell.Tab.1.center" timestamp="1606761505190">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973872" />
+    <state width="1126" height="557" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505190" />
     <state width="1126" height="162" key="GridCell.Tab.1.center/0.25.1680.950@0.25.1680.950" timestamp="1606658637634" />
     <state width="1126" height="162" key="GridCell.Tab.1.center/0.25.1680.952@0.25.1680.952" timestamp="1606592277150" />
     <state width="1638" height="364" key="GridCell.Tab.1.center/0.25.1680.954@0.25.1680.954" timestamp="1606410949265" />
-    <state width="1126" height="87" key="GridCell.Tab.1.left" timestamp="1606676973872">
+    <state width="1126" height="557" key="GridCell.Tab.1.left" timestamp="1606761505189">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973872" />
+    <state width="1126" height="557" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505189" />
     <state width="1126" height="162" key="GridCell.Tab.1.left/0.25.1680.950@0.25.1680.950" timestamp="1606658637633" />
     <state width="1126" height="162" key="GridCell.Tab.1.left/0.25.1680.952@0.25.1680.952" timestamp="1606592277150" />
     <state width="1638" height="364" key="GridCell.Tab.1.left/0.25.1680.954@0.25.1680.954" timestamp="1606410949265" />
-    <state width="1126" height="87" key="GridCell.Tab.1.right" timestamp="1606676973873">
+    <state width="1126" height="557" key="GridCell.Tab.1.right" timestamp="1606761505190">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973873" />
+    <state width="1126" height="557" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505190" />
     <state width="1126" height="162" key="GridCell.Tab.1.right/0.25.1680.950@0.25.1680.950" timestamp="1606658637634" />
     <state width="1126" height="162" key="GridCell.Tab.1.right/0.25.1680.952@0.25.1680.952" timestamp="1606592277150" />
     <state width="1638" height="364" key="GridCell.Tab.1.right/0.25.1680.954@0.25.1680.954" timestamp="1606410949265" />
-    <state width="1126" height="87" key="GridCell.Tab.2.bottom" timestamp="1606676973876">
+    <state width="1126" height="557" key="GridCell.Tab.2.bottom" timestamp="1606761505192">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973876" />
+    <state width="1126" height="557" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505192" />
     <state width="1126" height="162" key="GridCell.Tab.2.bottom/0.25.1680.950@0.25.1680.950" timestamp="1606658637640" />
     <state width="1126" height="295" key="GridCell.Tab.2.bottom/0.25.1680.952@0.25.1680.952" timestamp="1605983683118" />
     <state width="723" height="253" key="GridCell.Tab.2.bottom/0.25.1680.954@0.25.1680.954" timestamp="1605893763249" />
-    <state width="1126" height="87" key="GridCell.Tab.2.center" timestamp="1606676973875">
+    <state width="1126" height="557" key="GridCell.Tab.2.center" timestamp="1606761505192">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973875" />
+    <state width="1126" height="557" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505192" />
     <state width="1126" height="162" key="GridCell.Tab.2.center/0.25.1680.950@0.25.1680.950" timestamp="1606658637638" />
     <state width="1126" height="295" key="GridCell.Tab.2.center/0.25.1680.952@0.25.1680.952" timestamp="1605983683117" />
     <state width="723" height="253" key="GridCell.Tab.2.center/0.25.1680.954@0.25.1680.954" timestamp="1605893763248" />
-    <state width="1126" height="87" key="GridCell.Tab.2.left" timestamp="1606676973874">
+    <state width="1126" height="557" key="GridCell.Tab.2.left" timestamp="1606761505191">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973874" />
+    <state width="1126" height="557" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505191" />
     <state width="1126" height="162" key="GridCell.Tab.2.left/0.25.1680.950@0.25.1680.950" timestamp="1606658637635" />
     <state width="1126" height="295" key="GridCell.Tab.2.left/0.25.1680.952@0.25.1680.952" timestamp="1605983683116" />
     <state width="723" height="253" key="GridCell.Tab.2.left/0.25.1680.954@0.25.1680.954" timestamp="1605893763248" />
-    <state width="1126" height="87" key="GridCell.Tab.2.right" timestamp="1606676973875">
+    <state width="1126" height="557" key="GridCell.Tab.2.right" timestamp="1606761505192">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1126" height="87" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1606676973875" />
+    <state width="1126" height="557" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1606761505192" />
     <state width="1126" height="162" key="GridCell.Tab.2.right/0.25.1680.950@0.25.1680.950" timestamp="1606658637639" />
     <state width="1126" height="295" key="GridCell.Tab.2.right/0.25.1680.952@0.25.1680.952" timestamp="1605983683117" />
     <state width="723" height="253" key="GridCell.Tab.2.right/0.25.1680.954@0.25.1680.954" timestamp="1605893763249" />
@@ -582,20 +539,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="590" y="263" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606401764818" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1606476005380">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1606756284593">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1606476005380" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/devcolibri/servlet/PaymentSignupServlet.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1606756284593" />
   </component>
 </project>
