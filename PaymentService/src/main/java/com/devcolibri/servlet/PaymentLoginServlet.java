@@ -2,7 +2,9 @@ package com.devcolibri.servlet;
 
 import com.devcolibri.servlet.database.DaoImpl.UsersDao;
 import com.devcolibri.servlet.Utils.Utils;
+import com.devcolibri.servlet.database.DaoImpl.UsersRolesDao;
 import com.devcolibri.servlet.objects.User;
+import com.devcolibri.servlet.objects.UserRole;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(
         urlPatterns = {
@@ -49,15 +52,19 @@ public class PaymentLoginServlet extends HttpServlet {
 
         UsersDao usersDao = new UsersDao();
         User user = usersDao.selectOneByUsername(username);
-        if (user != null) {
-            if (passHash.equals(user.getPassHash())) {
+        if (user == null) {
+            errmsg = "User '" + username + "' not found!";
+        } else {
+            if (!passHash.equals(user.getPassHash())) {
+                errmsg = "Password is incorrect!";
+            } else {
                 HttpSession httpSession = req.getSession();
                 httpSession.setAttribute("userId", user.getId());
-            } else {
-                errmsg = "Password is incorrect!";
+                UsersRolesDao usersRolesDao = new UsersRolesDao();
+                ArrayList<UserRole> userRoles = usersRolesDao.selectByUserId(user.getId());
+                int privilegeLevel = Utils.getPrivilegeLevel(userRoles);
+                httpSession.setAttribute("privilegeLevel", privilegeLevel);
             }
-        } else {
-            errmsg = "User '" + username + "' not found!";
         }
 
         req.setAttribute("errmsg", errmsg);

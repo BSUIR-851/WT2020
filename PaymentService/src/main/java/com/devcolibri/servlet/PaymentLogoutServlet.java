@@ -21,6 +21,7 @@ public class PaymentLogoutServlet extends HttpServlet {
         HttpSession httpSession = req.getSession(false);
         if (httpSession != null) {
             httpSession.removeAttribute("userId");
+            httpSession.removeAttribute("privilegeLevel");
             httpSession.invalidate();
         }
         resp.sendRedirect(req.getContextPath());
@@ -32,6 +33,7 @@ public class PaymentLogoutServlet extends HttpServlet {
         HttpSession httpSession = req.getSession(false);
         if (httpSession != null) {
             httpSession.removeAttribute("userId");
+            httpSession.removeAttribute("privilegeLevel");
             httpSession.invalidate();
         }
         resp.sendRedirect(req.getContextPath());

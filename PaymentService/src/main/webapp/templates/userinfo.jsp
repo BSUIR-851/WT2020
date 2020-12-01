@@ -50,6 +50,8 @@
             </div>
         </div>
         <div class="col">
+            <a href="${contextPath}/maketransaction" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Pay</a>
+            <a href="${contextPath}/addfunds" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Add funds</a>
             <c:if test="${isBlocked}">
                 <a href="${contextPath}/requestforunblock" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Unblock</a>
             </c:if>
@@ -57,7 +59,6 @@
                 <a href="${contextPath}/blockbankaccount" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Block</a>
             </c:if>
             <a href="${contextPath}/edituserinfo" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Edit data</a>
-            <a href="${contextPath}/addfunds" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Add funds</a>
         </div>
     </div>
 </div>

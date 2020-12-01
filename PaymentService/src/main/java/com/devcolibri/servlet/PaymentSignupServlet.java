@@ -28,14 +28,13 @@ public class PaymentSignupServlet extends HttpServlet {
             throws ServletException, IOException {
         boolean isErr = false;
         HttpSession httpSession = req.getSession(false);
-        if (httpSession == null) {
-            isErr = true;
-        } else {
+        if (httpSession != null) {
             Object userIdObj = httpSession.getAttribute("userId");
-            if (userIdObj == null) {
+            if (userIdObj != null) {
                 isErr = true;
             }
         }
+
         if (isErr) {
             resp.sendRedirect(req.getContextPath());
         } else {

@@ -1,8 +1,13 @@
 package com.devcolibri.servlet.Utils;
 
+import com.devcolibri.servlet.database.DaoImpl.RolesDao;
+import com.devcolibri.servlet.objects.Role;
+import com.devcolibri.servlet.objects.UserRole;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Utils {
@@ -48,6 +53,19 @@ public class Utils {
             randString.append(String.valueOf(rand.nextInt(9)));
         }
         return randString.toString();
+    }
+
+    public static int getPrivilegeLevel(ArrayList<UserRole> userRoles) {
+        int privilegeLevel = 0;
+        RolesDao rolesDao = new RolesDao();
+        Role role = null;
+        for (UserRole userRole: userRoles) {
+            role = rolesDao.selectOneById(userRole.getRoleId());
+            if (role != null) {
+                privilegeLevel += role.getPrivilegeLevel();
+            }
+        }
+        return privilegeLevel;
     }
 
     public static boolean checkEmailPattern(String email) {
