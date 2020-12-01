@@ -12,7 +12,14 @@
                     <thead>
                     <tr class="row100 head">
                         <th class="cell100 column1-info">Role:</th>
-                        <th class="cell100 column2-info">USER</th>
+                        <th class="cell100 column2-info">
+                            <c:if test="${sessionScope.privilegeLevel == 0}">
+                                USER
+                            </c:if>
+                            <c:if test="${sessionScope.privilegeLevel == 1}">
+                                ADMIN
+                            </c:if>
+                        </th>
                     </tr>
                     </thead>
                 </table>
@@ -59,6 +66,9 @@
                 <a href="${contextPath}/blockbankaccount" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Block</a>
             </c:if>
             <a href="${contextPath}/edituserinfo" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Edit data</a>
+            <c:if test="${sessionScope.privilegeLevel == 1}">
+                <a href="${contextPath}/adminpanel" class="custom-btn btn-bg-bordered btn mt-3" data-aos="fade-up" data-aos-delay="100">Admin panel</a>
+            </c:if>
         </div>
     </div>
 </div>

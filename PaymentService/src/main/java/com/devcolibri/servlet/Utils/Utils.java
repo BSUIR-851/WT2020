@@ -1,8 +1,9 @@
 package com.devcolibri.servlet.Utils;
 
+import com.devcolibri.servlet.database.DaoImpl.BankAccountsDao;
+import com.devcolibri.servlet.database.DaoImpl.BlockedBankAccountsDao;
 import com.devcolibri.servlet.database.DaoImpl.RolesDao;
-import com.devcolibri.servlet.objects.Role;
-import com.devcolibri.servlet.objects.UserRole;
+import com.devcolibri.servlet.objects.*;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -66,6 +67,22 @@ public class Utils {
             }
         }
         return privilegeLevel;
+    }
+
+    public static ArrayList<BankAccount> getRequestedBlockedAccounts(ArrayList<RequestForUnblock> requestsForUnblock) {
+        ArrayList<BankAccount> requestedBlockedBankAccounts = new ArrayList<BankAccount>();
+        for (RequestForUnblock requestForUnblock : requestsForUnblock) {
+            BlockedBankAccountsDao blockedBankAccountsDao = new BlockedBankAccountsDao();
+            BlockedBankAccount blockedBankAccount = blockedBankAccountsDao.selectOneById(requestForUnblock.getBlockedBankAccountId());
+            if (blockedBankAccount != null) {
+                BankAccountsDao bankAccountsDao = new BankAccountsDao();
+                BankAccount bankAccount = bankAccountsDao.selectOneById(blockedBankAccount.getBankAccountId());
+                if (bankAccount != null) {
+                    requestedBlockedBankAccounts.add(bankAccount);
+                }
+            }
+        }
+        return requestedBlockedBankAccounts;
     }
 
     public static boolean checkEmailPattern(String email) {

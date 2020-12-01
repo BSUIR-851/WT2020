@@ -56,7 +56,7 @@ public class PaymentSignupServlet extends HttpServlet {
         String firstName = req.getParameter("first-name");
         String lastName = req.getParameter("last-name");
         User user = new User(username, email, passHash, firstName, lastName);
-        int userId = usersDao.update(user);
+        int userId = usersDao.insert(user);
 
         UsersRolesDao usersRolesDao = new UsersRolesDao();
         UserRole userRole = new UserRole(userId, UsersRolesDao.USER_ID);

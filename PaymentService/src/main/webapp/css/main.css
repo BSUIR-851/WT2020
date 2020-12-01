@@ -209,6 +209,35 @@ th, td {
   width: 10%;
 }
 
+.column1-admin {
+  width: 10%;
+  padding-left: 40px;
+}
+
+.column2-admin {
+  width: 15%;
+}
+
+.column3-admin {
+  width: 25%;
+}
+
+.column4-admin {
+  width: 15%;
+}
+
+.column5-admin {
+  width: 15%;
+}
+
+.column6-admin {
+  width: 10%;
+}
+
+.column7-admin {
+  width: 10%;
+}
+
 .table100-head th {
   padding-top: 18px;
   padding-bottom: 18px;

@@ -89,6 +89,8 @@ public class PaymentDeleteCardServlet extends HttpServlet {
                                 } else {
                                     deleteRes = cardsDao.deleteByNumber(cardNumber);
                                     if (deleteRes == 0) {
+                                        bankAccount.setBalance(bankAccount.getBalance() - card.getBalance());
+                                        updateRes = bankAccountsDao.update(bankAccount);
                                         errmsg = "Something gone wrong!";
                                     } else {
                                         req.setAttribute("deletedCardNumber", cardNumber);
